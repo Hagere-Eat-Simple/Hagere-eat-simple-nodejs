@@ -1,0 +1,176 @@
+.browse
+{
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+.group_s {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    min-width: 5em;
+}
+
+.input_search {
+    width: 20em;
+    height: 4em;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    outline: none;
+    background-color: #fff;
+    color: #0d0c22;
+    transition: .3s ease;
+    border-color: rgba(76, 234, 137, 1);
+    margin-right: 1em;
+}
+
+.input_search::placeholder {
+    color: #323232;
+}
+
+.input_search:focus, input:hover {
+    outline: none;
+    border-color: rgba(76, 234, 137, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(76 234 137 / 10%);
+}
+
+.icon_s {
+    position: absolute;
+    left: 1rem;
+    fill: #646466;
+    width: 1rem;
+    height: 1rem;
+}
+.r_list
+{
+    margin-left: 10em;
+    margin-right: 10em;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+.r_title
+{
+    font-size: 2em;
+    color: #919090;
+    text-align: center;
+    
+}
+.rl_card .info h1 {
+    font-weight: 500;
+    font-size: 23px;
+}
+
+.rl_card {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.rl_card:hover {
+    height: 350px;
+}
+
+.rl_card .pb {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+    transition: all 0.4s ease-in-out;
+}
+
+.rl_card:hover .pb {
+    height: 250px;
+    width: 250px;
+}
+
+.rl_card .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 125px 0px 10px 0px;
+    transition: all 0.4s ease-in-out;
+}
+
+.rl_card:hover .info {
+    display: flex;
+    padding: 230px 0px 10px 0px;
+}
+
+.rl_buttons {
+    position: relative;
+    display: flex;
+    opacity: 0;
+    z-index: -10;
+    padding: 10px 50px;
+    justify-content: space-between;
+    transform: translateX(-20px);
+    transition-timing-function: linear;
+    transition-duration: 0s, 0.2s, 0.2s;
+    transition-property: z-index, opacity, transform;
+    transition-delay: 0.2s, 0s, 0s;
+}
+
+.rl_buttons button {
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#visit_r {
+    background-color: #008000;
+    border: 1px solid #008000;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s linear;
+}
+
+#visit_r:hover {
+    background-color: #008000;
+}
+
+#view_l {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    font-weight: 500;
+    transition: all 0.3s linear;
+}
+
+#view_l a {
+    color: grey;
+}
+
+#view_l:hover {
+    background-color: darkgrey;
+    color: #fff;
+}
+
+.rl_card:hover .rl_buttons {
+    opacity: 1;
+    z-index: 0;
+    transform: translateX(0px);
+    transition-timing-function: linear;
+    transition-duration: 0s, 0.3s, 0.3s;
+    transition-property: z-index, opacity, transform;
+    transition-delay: 0s, 0.2s, 0.2s;
+}

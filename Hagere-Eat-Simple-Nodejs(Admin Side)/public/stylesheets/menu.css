@@ -1,0 +1,261 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    zoom: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 20px 40px;
+    zoom: 90%;
+}
+
+.heading {
+    background-color: #cb202d;
+    color: #ffffff;
+    margin-bottom: 30px;
+    padding: 120px 0 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.heading>h1 {
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 1px;
+    word-spacing: 15px;
+    margin-bottom: 10px;
+    display: inline;
+    
+}
+
+.heading>h3 {
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 5px;
+}
+
+.food-items {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 0 20px;
+}
+
+.food-items img {
+    position: relative;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.details {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: auto 1fr 50px;
+    grid-row-gap: 15px;
+}
+
+.details-sub {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.details-sub>h5 {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.price {
+    text-align: right;
+}
+
+.details>p {
+    color: #6f6f6f;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 400;
+    align-self: stretch;
+}
+
+.details>button {
+    background-color: #cb202d;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 180px;
+    transition: 0.2s ease-in-out;
+}
+.details>button:hover {
+    color: #cb202d;
+    background-color: #ffffff;
+    border: 1px solid #cb202d;
+}
+.browse {
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+.group_s {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    min-width: 5em;
+}
+.sort
+{
+    display: block;
+}
+.input_search {
+    width: 20em;
+    height: 4em;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    outline: none;
+    background-color: #fff;
+    color: #0d0c22;
+    transition: .3s ease;
+    border-color: #cb202d;
+    
+}
+
+.input_search::placeholder {
+    color: #323232;
+}
+
+.input_search:focus,
+input:hover {
+    outline: none;
+    border-color: #cb202d;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(76 234 137 / 10%);
+}
+
+.icon_s {
+    position: absolute;
+    left: 1rem;
+    fill: #646466;
+    width: 1rem;
+    height: 1rem;
+}
+.sort
+{
+    display: inline;
+}
+summary
+{
+    display: inline;
+    margin-left: 85em;
+    margin-right: 1em;
+}
+details[open] summary~* {
+    animation: open .5s ease-in-out;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+        margin-left: -20px
+    }
+
+    100% {
+        opacity: 1;
+        margin-left: 0px
+    }
+}
+.about
+{
+    font-size: 14px;
+    font-weight: 100;
+    font-family:'Times New Roman', Times, serif;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 20px;
+    z-index: 10;
+    background-color: inherit;
+    width: 90%;
+    max-width: 90%;
+    height: 80%;
+
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    background-color: #cb202d;
+    border-radius: 20px;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+.cart_btn
+{
+    cursor: pointer;
+}
+.food_pic
+{
+    height:290px ; 
+    width: 400px;   
+}
+

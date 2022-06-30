@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <!--    style-->
+    <link rel="stylesheet" href="../../stylesheets/edit_admin.css" />
+
+
+    <!--    title-->
+
+    <link rel="shortcut icon" href="../resources/images/logo.png" type="image/x-icon">
+    <title>Hagere Hub</title>
+</head>
+
+<body style="background: #efefef">
+    <h2>Edit Profile</h2>
+    <!-- php starts here
+    <?php
+
+    $id = $_SESSION['uname'];
+
+    $qry = "SELECT fname,lname,username,email,phone from customer where username='$id'";
+    $qry_run = mysqli_query($con,$qry);
+
+    foreach ($qry_run as $row){
+        ?> -->
+    <!--            form starts-->
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="edit_id" value="">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" value="" placeholder="Enter First Name"
+            name="edit_fname" required />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="name">Last Name:</label>
+        <input type="text" id="lname" value="" placeholder="Enter Last Name"
+            name="edit_lname" required />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="name">Email :</label>
+        <input type="email" id="email" value="" placeholder="Enter Email" name="edit_email"
+            required />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="phone">Phone:</label>
+        <input type="tel" pattern="[0-9]{10}" id="phone" value=""
+            placeholder="e.g. 0987654321" name="edit_phone" required>
+        <br><br>
+        <a style="text-decoration: none;color: coral" href="index.php">CANCEL</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="color: green; outline: none; border: none; background: none; cursor: pointer;" type="submit"
+            name="update" onclick="return confirm('Are you sure you want to update?');">UPDATE</button>
+    </form>
+    <br><br><br>
+    <!--        php ends-->
+    <?php
+    }
+?>
+    <h2>Change Password</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="edit_id" value="">
+        <label for="opass">Enter Previous Password:</label>
+        <input type="password" id="opass" placeholder="Enter Previous Password" name="edit_opass" required />
+        <br><br>
+        <label for="npass">Enter New Password:</label>
+        <input type="password" id="npass" placeholder="Enter New Password" name="edit_npass" required />
+        <br><br> <label for="cpass">Confirm New Password:</label>
+        <input type="password" id="cpass" placeholder="Confirm New Password" name="edit_cpass" required />
+        <br><br>
+        <button style="color: green; outline: none; border: none; background: none; cursor: pointer;" type="submit"
+            name="change_pw" onclick="return confirm('Are you sure you want to change password?');">CHANGE</button>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+</head>
+<!--body-->
+
+<body style="background: #efefef" id="body">
+	<div class="mode">
+		<svg id="dark" onclick="moonIcon()" style="display: none;" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+			viewBox="0 0 20 20" fill="currentColor">
+			<path fill-rule="evenodd"
+				d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+				clip-rule="evenodd" />
+		</svg>
+
+		<svg id="light" onclick="sunIcon()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+			viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color:#fff;">
+			<path stroke-linecap="round" stroke-linejoin="round"
+				d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+		</svg>
+	</div>
+	</div>
+	<div class="navbar">
+		<!--Logout button form to destroy session-->
+		<span class="nav_item"><a href="/admin/index">Vendors</a></span>
+		<span class="nav_item"><a href="/admin/acustomers">Clients</a></span>
+		<span class="nav_item"><a href="/admin/adelivery">Delivery</a></span>
+		<span class="nav_item"><a href="/admin/import">Import</a></span>
+
+		<span class="drop"><button class="report">Download Reports</button>
+			<div class="dropdown-content">
+				<form method="post" action="/admin/report/vendor" enctype="multipart/form-data">
+					<button type="submit" name="vlist">Vendor List</button>
+				</form>
+				<form method="post" action="/admin/report/customer" enctype="multipart/form-data">
+					<button type="submit" name="clist">Customer List</button>
+				</form>
+				<form method="post" action="/admin/report/delivery" enctype="multipart/form-data">
+					<button type="submit" name="dlist">Delivery List</button>
+				</form>
+			</div>
+		</span>
+		<span class="drop"><button class="report">Export Table</button>
+			<div class="dropdown-content">
+				<form method="post" action="/admin/export/vendor" enctype="multipart/form-data">
+					<button type="submit" name="vtable">Vendor Table</button>
+				</form>
+				<form method="post" action="/admin/export/customer" enctype="multipart/form-data">
+					<button type="submit" name="ctable">Customer Table</button>
+				</form>
+				<form method="post" action="/admin/export/order" enctype="multipart/form-data">
+					<button type="submit" name="otable">Order Table </button>
+				</form>
+				<form method="post" action="/admin/export/deposit" enctype="multipart/form-data">
+					<button type="submit" name="dtable">Deposit Table </button>
+				</form>
+			</div>
+		</span>
+		
+		
+		
+		<span id="profile"><a href="/admin/edit">Profile</a></span>
+		<form action="/pages/admin_index" method="post">
+			<button id="logout_btn" type="submit" name="log_out"
+				onclick="return confirm('Are you sure you want to logout?');">Logout</button>
+			<!--    <a href = "logout.php"
+ style = "float: right;margin-right: 5px;background-color: #cdcdcd;
+  color: darkred;padding: 10px; border-radius: 5px;text-decoration: none;"
+  >Logout</a>-->
+		</form>
+		<select disabled id="select">
+			<option name="admin" value="admin">
+				
+				username
+			</option>
+		</select>
+	</div>

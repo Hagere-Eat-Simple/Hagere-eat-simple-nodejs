@@ -1,0 +1,45 @@
+.profiles
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 30px;
+}
+#uname
+{
+    font-weight: bold;
+}
+#wallet
+{
+    border: 3px solid green;
+}
+.profiles input
+{
+    height: 2.5em;
+    border-radius: 10px;
+}
+.profile_list
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+h2
+{
+    margin-left: 30px;
+}
+.locations
+{
+   
+    display: flex;
+    justify-content:space-evenly;
+}
+.location_list
+{
+    height: 500px;
+    overflow-y: scroll;
+
+}

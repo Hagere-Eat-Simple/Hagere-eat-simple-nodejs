@@ -1,0 +1,145 @@
+<%- include('../partials/admin_header',{title:'Active Deliverers'}); -%>
+    <!--    style starts-->
+    <link rel="stylesheet" href="../../stylesheets/admin.css" />
+    <%- include('../partials/admin_navigation'); -%>
+
+
+
+        <span class="create_item"><a href="/admin/vcreate">Create Vendor</a></span>
+        <span class="create_item"><a href="/admin/svendors">Suspended Vendors</a></span>
+
+
+        </h2><br>
+        <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g>
+                    <path
+                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+                    </path>
+                </g>
+            </svg>
+            <form action="/admin/search/index" method="post" id="sform">
+                <input placeholder="Search" id="search" type="search" class="input" onchange="Search()" value="" name="search_value">
+            </form>
+        </div>
+        <h1 id="h1">Active Vendors Information</h1>
+
+        <span class='echo'>
+            <%=data.length %>
+        </span>
+
+        <div id="table">
+            <table id="vendor_list">
+                <thead>
+                    <tr>
+                        <th> LOGO</th>
+                        <th> USERNAME</th>
+                        <th> NAME</th>
+                        <th> EMAIL</th>
+                        <th> PHONE</th>
+                        <th> ADDRESS</th>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+
+                    </tr>
+                </thead>
+            </table>
+            <div class="table">
+                <table>
+                    <tbody>
+
+                        <% if(data.length> 0){
+                            data.forEach(function(data){
+                            %>
+
+                            <tr>
+                                <td>
+                                    <img src="../../vendor_list/<%=data.username%>/images/<%=data.logo%>" alt="logo"
+                                        width="100px" height="100px">
+                                </td>
+                                <td>
+                                    <%= data.username%>
+                                </td>
+                                <td>
+                                    <%= data.Rname %>
+                                </td>
+                                <td>
+                                    <%= data.email %>
+                                </td>
+                                <td>
+                                    <%= data.phone %>
+                                </td>
+                                <td> <a target="_blank" href="<%= data.location %>">Map</a>
+                                </td>
+                                <!-- <td><?php // echo $row['vendor_logo']; ?></td> -->
+                                <td>
+                                    <form action="edit_vendor" method="post">
+                                        <input type="hidden" name="edit_id" value="<%=data.username%>">
+                                        <button name="edit" class="update_btn" type="submit">UPDATE</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/admin/vdeactivate" method="post">
+                                        <input type="hidden" name="delete_id" value="<%=data.username%>">
+                                        <button class="remove_btn" type="submit" name="remove"
+                                            onclick="return confirm('Are you sure you want to deactivate?');">DEACTIVATE</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); } else{ %>
+                                <td colspan="7">No Records.</td>
+                                <% } %>
+                                    <!-- <?php
+        }
+    }else{
+        echo '<td colspan="7">No Records.</td>';
+    }
+
+
+    ?> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--/////////////////////////////-->
+        <!--Account creating html-->
+        <!--/////////////////////////////////////////-->
+
+
+        <script>
+            function sunIcon() {
+
+                document.getElementById("body").style.backgroundColor = "rgba(0, 0, 21, 0.73)";
+                document.getElementById("body").style.color = "#efefef";
+                document.getElementById("light").style.display = "none";
+                document.getElementById("dark").style.display = "inline";
+                document.getElementById("h1").style.color = "#fff";
+                document.getElementById("h2").style.color = "#fff";
+                document.getElementById("h3").style.color = "#fff";
+
+
+            }
+            function moonIcon() {
+                document.getElementById("body").style.backgroundColor = "#efefef";
+                document.getElementById("body").style.color = "#000000";
+                document.getElementById("dark").style.display = "none";
+                document.getElementById("light").style.display = "inline";
+                document.getElementById("h1").style.color = "#000";
+                document.getElementById("h2").style.color = "#000";
+                document.getElementById("h3").style.color = "#000";
+
+            }
+            function alterMenu() {
+                var form = document.getElementById("sform");
+                form.submit();
+            }
+
+        </script>
+
+        </body>
+
+        </html>

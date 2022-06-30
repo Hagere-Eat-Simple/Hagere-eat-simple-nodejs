@@ -1,0 +1,65 @@
+<%- include('../partials/header',{title:'Login'}); -%>
+   
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card text-center">
+                <div class="card-header bg-primary">
+                    <h3>Login</h3>
+                </div>
+				
+				<div class="card-body">
+					<img src="/images/pic.jpeg" alt="" 
+							class="card-img-top mx-auto m-2 rounded-circle w-50">
+						 
+					<form action="" method="POST">     
+						<div class="form-group">
+							<label for="user_email" class="float-left">Email Address</label>
+							<input type="email" class="form-control" 
+									name="email" id="user_email" 
+									autocomplete="off" placeholder="Enter your email">
+						</div>
+						
+						<div class="form-group">
+							<label for="user_pass" class="float-left">Password</label>
+							<input type="password" class="form-control" 
+									name="password" id="user_pass" 
+									placeholder="Enter new password">
+						</div>
+						
+						<% 
+							if(typeof error !== 'undefined' && error != "")
+							{ 
+						%>
+							<div class="err-msg">
+								<%= error		%>
+							</div>
+						<% 
+							} 
+						%>
+						
+						<div class="form-group">
+						    <label class="float-left" style = "font-weight: normal">
+								 <input type="checkbox" name="checkbox"> Remember Me
+						    </label>
+							
+							<a href="./passReset_Request" class="float-right"	style = "color:#17202A"> 
+										Forgot Password? 
+							</a>
+						</div>
+						
+						<div class="form-group">
+							<input type="submit" value="Login">
+							<div class="link">
+								Don't have an account?
+								<a href="./signup">Sign Up</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- include('../partials/footer'); -%>

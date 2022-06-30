@@ -1,0 +1,43 @@
+
+
+<html>
+
+<head>
+    <!--    style-->
+    <link rel="stylesheet" href="../../stylesheets/edit_admin.css" />
+
+
+    <!--    title-->
+
+    <link rel="shortcut icon" href="../../images/logo.png" type="image/x-icon">
+    <title>Hagere Hub</title>
+</head>
+
+<body style="background: #efefef">
+    <h2>Deposit to Account</h2>
+
+    <form action="/admin/deposit_mny" method="post" >
+        <input type="hidden" name="deposit_id" value='<%=data.username%>'>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="wallet_val">Wallet Amount:</label>
+        <input type="text" name="wallet_val" id="wallet" value="<%=data.wallet%>" readonly />
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="deposit">Deposit Amount:</label>
+        <input type="text" id="deposit" placeholder="Enter Deposit Amount" name="deposit_value" required />
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a style="text-decoration: none;color: coral" href="/admin/index">Return To Home</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button style="color: green; outline: none; border: none; background: none; cursor: pointer;" type="submit"
+            name="deposit_btn" onclick="return confirm('Are you sure you want to deposit ?');">Deposit</button>
+    </form>
+    <br><br><br>
+           <!-- php ends -->
+    <!-- <?php
+    }}
+?> -->
+
+</body>
+
+</html>

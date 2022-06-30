@@ -1,0 +1,256 @@
+ .hero.active {
+     height: 100%;
+     width: 100%;
+     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/mg.jpg);
+     background-position: center;
+     background-size: cover;
+     position: fixed;
+     display: block;
+     z-index: 10000;
+ }
+
+ .hero {
+     display: none;
+ }
+
+ .form-box {
+     width: 25em;
+     height: 480px;
+     position: relative;
+     margin: 6% auto;
+     background: #fff;
+     overflow: hidden;
+     border-radius: 15px;
+    
+
+ }
+
+ .button-box {
+     width: 220px;
+     margin-top: 35px;
+     margin-left: auto;
+     margin-right: auto;
+     border-radius: 30px;
+     position: relative;
+ }
+
+ .toggle-btn {
+     padding: 10px 30px;
+     cursor: pointer;
+     background: transparent;
+     border: 0;
+     outline: none;
+     position: relative;
+ }
+
+ #btnn {
+     top: 0;
+     left: 0;
+     position: absolute;
+     width: 110px;
+     height: 100%;
+     background-color: #069C54;
+     border-radius: 30px;
+     transition: .5s;
+ }
+
+ .input-group {
+     top: 100px;
+     position: absolute;
+     width: 20em;
+     transition: .5s;
+ }
+
+ .input-field {
+     width: 100%;
+     padding: 10px 10px;
+     border-left: 0;
+     border-top: 0;
+     border-right: 0;
+     border-bottom: 1px solid #999;
+     outline: none;
+     background: transparent;
+     border-radius: 10px;
+     margin-bottom: 15px;
+
+ }
+
+ .submit-btn {
+     width: 80%;
+     padding: 10px 30px;
+     cursor: pointer;
+     display: block;
+     margin: auto;
+     background: #069C54;
+     ;
+     border: 0;
+     outline: none;
+     border-radius: 30px;
+ }
+
+ .submit-btn a {
+     font-size: 15px;
+     text-decoration: none;
+     font-weight: 900;
+
+ }
+
+ .check-box {
+     margin: 30px 10px 30px 0;
+ }
+
+ span #remember {
+     color: #777;
+     font-size: 13px;
+     bottom: 68px;
+     position: absolute;
+ }
+
+ span #remember {
+     color: #777;
+     font-size: 7px;
+ }
+
+ #login {
+     left: 50px;
+ }
+
+ #register {
+     left: 450px;
+ }
+
+ #overlay2 {
+     position: fixed;
+     opacity: 0;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     transition: 200ms ease-in-out;
+     background-color: rgba(59, 58, 58, 0.3);
+     pointer-events: all;
+ }
+
+ #overlay2.active1 {
+     opacity: 1;
+     z-index: 20;
+     pointer-events: all;
+ }
+
+ .signin_btn {
+     cursor: pointer;
+ }
+
+ .close {
+     color: rgb(33, 43, 67);
+     position: absolute;
+     cursor: pointer;
+     top: -0.5rem;
+     right: 0;
+     font-size: 3rem;
+     background-color: transparent;
+     border: none;
+ }
+
+ #logout_btn {
+     margin-left: 1em;
+     outline: none;
+     font: 16px Poppins, sans-serif;
+     border: none;
+     font-weight: 500;
+     color: #707070;
+     background-color: transparent;
+ }
+
+ #logout_btn:hover {
+     background-color: #008000;
+     color: #efefef;
+     transition: .3s ease-in-out;
+     border-radius: 7px;
+ }
+ .find
+ {
+     margin-top: -40em;
+ }
+  .find1 {
+      margin-top: -10em;
+  }
+  .icon {
+      cursor: pointer;
+  }
+
+  .icon span {
+      font-size: 10px;
+      background: #f00;
+      padding: 1px;
+      border-radius: 50%;
+      color: #fff;
+      vertical-align: top;
+      margin-left: -10px;
+      margin-top: -3px;
+  }
+  .icon:hover {
+      opacity: .7;
+  }
+  .notifi-box {
+      width: 300px;
+      height: 0px;
+      opacity: 0;
+      position: absolute;
+      top: 63px;
+      right: 35px;
+      transition: 1s opacity, 250ms height;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color:#eee;
+      height: 400px;
+      overflow-y: scroll;
+  }
+
+  .notifi-box h2 {
+      font-size: 12px;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      color: #999;
+  }
+
+  .notifi-box h2 span {
+      color: #f00;
+  }
+
+  .notifi-item {
+      display: flex;
+      border-bottom: 1px solid #eee;
+      padding: 15px 5px;
+      margin-bottom: 15px;
+      cursor: pointer;
+  }
+
+  .notifi-item img {
+      display: block;
+      width: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+  }
+
+  .notifi-item .text h4 {
+      color: #777;
+      font-size: 16px;
+      margin-top: 10px;
+  }
+
+  .notifi-item .text p button {
+      color: #aaa;
+      font-size: 14px;
+      border: none;
+  }
+
+  .notifi-item .text p button:hover {
+      color: rgb(0, 0, 0);
+      font-size: 14px;
+      border: none;
+  }
+  .error
+  {
+      font-size: 12px;
+      color: #f00;
+  }

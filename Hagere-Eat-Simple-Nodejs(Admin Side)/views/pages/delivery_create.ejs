@@ -1,0 +1,100 @@
+<%- include('../partials/admin_header',{title:'Add  Deliverer'}); -%>
+
+    <!--    style starts-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../../stylesheets/admin_create.css" />
+    <link rel="stylesheet" href="../../stylesheets/admin.css" />
+
+    <%- include('../partials/admin_navigation'); -%>
+    <h1 id="hv">Create Account</h1>
+
+    <form id="v_form" class="vendor_form" action="" method="post">
+    <% if(typeof msg !='undefined' && msg !="" ) { %>
+        <div class="error">
+            <%= msg %>
+        </div>
+        <% } if(typeof error !=='undefined' && error !="" ) { %>
+            <div class="error">
+                <%= error %>
+            </div>
+            <% } %>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" value="" placeholder="Enter First Name" name="fname" required /><br><br>
+        <label for="fname">Last Name:</label>
+        <input type="text" id="lname" value="" placeholder="Enter Last Name" name="lname" required /><br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" value="" placeholder="Enter Username" name="username" required /><br><br>
+        <label for="name">Email:</label>
+        <input type="email" id="email" value="" placeholder="Enter Email" name="email" required /><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter Password" name="password" minlength="8" required />
+        <label for="cpassword">Confirm Password:</label><br><br>
+        <input type="password" id="cpassword" placeholder="Confirm Password" name="cpassword" minlength="8" required />
+        <i class="bi bi-eye-slash" id="togglePassword"> Password Visibility</i><br><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" pattern="[0-9]{10}" id="phone" value="" placeholder="e.g. 011-123456789" name="phone"
+            required><br><br>
+        <button class="form_btn" type="submit" id="register" name="create"
+            onclick="return confirm('Are you sure you want to create?');">Create account</button><br><br>
+
+    </form><br><br><br>
+
+
+    <script>
+        function sunIcon() {
+            document.getElementById("body").style.backgroundColor = "rgba(0, 0, 21, 0.73)";
+            document.getElementById("body").style.color = "#efefef";
+            document.getElementById("light").style.display = "none";
+            document.getElementById("dark").style.display = "inline";
+            document.getElementById("h1").style.color = "#fff";
+            document.getElementById("h2").style.color = "#fff";
+            document.getElementById("hv").style.color = "#fff";
+        }
+
+        function moonIcon() {
+            document.getElementById("body").style.backgroundColor = "#efefef";
+            document.getElementById("body").style.color = "#000000";
+            document.getElementById("dark").style.display = "none";
+            document.getElementById("light").style.display = "inline";
+            document.getElementById("h1").style.color = "#000";
+            document.getElementById("h2").style.color = "#000";
+            document.getElementById("hv").style.color = "#000";
+        }
+        function locate() {
+            alert("Warning: Accuracy of 'Find my Location' depends on Internet Speed So Please Confirm link after creation")
+            function errorCallback(error) {
+                alert(`ERROR(${error.code}): ${error.message}`);
+            };
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    let x = position.coords.latitude;
+                    let y = position.coords.longitude;
+                    document.getElementById("add").value = "https://www.google.com/maps/search/?api=1&query=" + x + "," + y;
+                    // alert(position.time)
+                }, errorCallback, { enableHighAccuracy: true });
+
+                /* geolocation is available */
+            } else {
+                alert("Location not available")
+                /* geolocation IS NOT available */
+            }
+        }
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+        const cpassword = document.querySelector("#cpassword");
+
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            const ctype = cpassword.getAttribute("type") === "password" ? "text" : "password";
+            cpassword.setAttribute("type", type);
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+    </script>
+
+</body>
+
+</html>

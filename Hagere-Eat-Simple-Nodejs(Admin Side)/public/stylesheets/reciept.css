@@ -1,0 +1,22 @@
+.re_title
+{
+    font-size: 20px;
+    text-align: center;
+}
+.receipts{
+        margin-top: 5em;
+        margin-left: 5em;
+}
+.re_list
+{
+    display: flex;
+    flex-direction: column;
+}
+.re_items {
+    display: flex;
+    justify-content: space-around;
+}
+#re_content
+{
+    margin-top: 20px;
+}

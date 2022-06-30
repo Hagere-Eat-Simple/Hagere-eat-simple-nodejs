@@ -1,0 +1,103 @@
+<%- include('../partials/header',{title:'Signup'}); -%>
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+			<div class="card text-center">
+				<div class="card-header bg-primary">
+					<h3>Sign Up</h3>
+				</div>
+				
+				<div class="card-body">
+					<form action="" method="POST" class = "form-inline">
+						<div class="row">
+							<div class="col-6">		
+								<label for="_fname" class="float-left">First Name</label>
+								<input type="text" class="input" name="fname"
+										autocomplete="off" id="_fname" 
+										Placeholder="Enter your first name">
+							</div>
+							<div class="col-6">		
+								<label for="_lname" class="float-left">Last Name</label>
+								<input type="text" class="input" name="lname"
+										autocomplete="off" id="_lname" 
+										Placeholder="Enter your last name">
+							</div>
+						</div>	
+							
+						<div class="row">
+							<div class="col-7">
+								<label for="_email" class="float-left">Email Address</label>
+								<input type="email" class="input" 
+									name="email" id="_email" autocomplete="off"  
+									placeholder="Enter your email">
+							</div>
+							
+							<div class="col-2">
+									<label for="gender" >Gender</label>
+									<input type="radio"	name="gender"
+											 id="male" value="Male"> Male
+							</div>
+							<div class="col-3">
+									<br>
+								<input type="radio" name="gender"  
+											id="female" value="Female"> Female
+							</div>
+						</div>
+						
+						<div class = "row">
+							<div class="col-6">			
+								<label for="_pass" class="float-left">Password</label>
+								<input type="password" class="input" 
+										name="password" id="_pass" 
+										placeholder="Enter new password">
+							</div>
+							<div class="col-6 mb-3">			
+								<label for="_cpass" class="float-left">Confirm Password</label>
+								<input type="password" class="input" 
+										name="cpassword" id="_cpass" 
+										placeholder="Confirm the password">
+							</div>
+						</div>
+										
+							<% 
+							if(typeof msg != 'undefined' && msg != "")
+							{ 
+							%>
+								<div class="col-12">
+									<div class="success-msg">
+										<%= msg %>
+									</div>									
+								</div>
+							<% 
+							}
+									
+							if(typeof error !== 'undefined' && error != "")
+							{ 
+							%>
+								<div class="col-12">
+									<div class="err-msg">
+										<%= error %>
+									</div>									
+								</div>
+							<% 
+							} 
+							%>
+							
+						<div class="form-btns">
+							<input type="submit" value="Sign Up">
+						
+							<div class="link options">
+								Already have an account?
+								<a href="./login">Login</a>
+							</div>
+						</div>							
+					</form>
+					
+				</div>	<!-- end of card-body class -->
+			</div>	<!-- end of column class -->
+		</div>	<!-- end of row class -->
+	</div>	<!-- end of card class -->
+</div> 	<!-- end of container class -->
+
+<%- include('../partials/footer'); -%>
